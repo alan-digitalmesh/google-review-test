@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="EPpdcv4Q9KeKfAfkykA3IwLXp2Qz58YKTF9RF9il69M" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Google Customer Reviews</title>
+</head>
+
+<body>
+    <button id="google-review">Google Review</button>
+    <!-- BEGIN Google Customer Reviews -->
+    <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+    <script>
+        const number = 5540787298;
+        const order_id = '5953081475264';
+        const customer_email = 'testing@p80w.com';
+        const delivery_country = 'US';
+        const estimated_delivery_date = '2025-04-29';
+        window.renderOptIn = function () {
+            $("#google-review").click(function () {
+                window.gapi.load('surveyoptin', function () {
+                    window.gapi.surveyoptin.render({
+                        "merchant_id": number,
+                        "order_id": order_id,
+                        "email": customer_email,
+                        "delivery_country": delivery_country,
+                        "estimated_delivery_date": estimated_delivery_date,
+                    });
+                });
+            });
+        }
+    </script>
+    <!-- END Google Customer Reviews -->
+</body>
+
+</html>
