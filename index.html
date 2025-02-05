@@ -22,15 +22,13 @@
         const delivery_country = 'US';
         const estimated_delivery_date = '2025-02-05';
         window.renderOptIn = function () {
-            $("#google-review").click(function () {
-                window.gapi.load('surveyoptin', function () {
-                    window.gapi.surveyoptin.render({
-                        "merchant_id": number,
-                        "order_id": order_id,
-                        "email": customer_email,
-                        "delivery_country": delivery_country,
-                        "estimated_delivery_date": estimated_delivery_date,
-                    });
+            window.gapi.load('surveyoptin', function () {
+                window.gapi.surveyoptin.render({
+                    "merchant_id": number,
+                    "order_id": order_id,
+                    "email": customer_email,
+                    "delivery_country": delivery_country,
+                    "estimated_delivery_date": estimated_delivery_date,
                 });
             });
         }
